@@ -4,12 +4,63 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Календарь и результаты</title>
+    <title>Результаты футбольных матчей</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="header"></header>
-    <main class="main"></main>
+    <header class="header">
+      <nav class="navigation">
+        <ul class="navigation-list">
+          <li class="navigation-ithem">
+            <a class="navigation-link" href="#">
+              <img src="#" width="100" height="100" alt="Логотип «whoscored»">
+            </a>
+          </li>
+          <li class="navigation-ithem">
+            <a class="navigation-link" href="#">whoscored</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <h1 class="visually-hidden">Результаты футбольных матчей и футбольная статистика</h1>
+      <section class="main-navigation">
+        <h2 class="main-navigation-title">Главные события</h2>
+        <ul class="main-navigation-list">
+          <li class="main-navigation-ithem">
+            <a class="main-navigation-link" href="#">Все</a>
+          </li>
+          <li class="main-navigation-ithem">
+            <a class="main-navigation-link" href="#">Вчера</a>
+          </li>
+          <li class="main-navigation-ithem">
+            <a class="main-navigation-link" href="#">Завтра</a>
+          </li>
+        </ul>
+      </section>
+      <section class="results">
+        <h2 class="visually-hidden">Результаты футбольных матчей</h2>
+        <section class="results-tournament">
+          <h3 class="visually-hidden">Турнир</h3>
+          <div class="results-tournament-logo">
+            <img src="#" width="100" height="100" alt="Логотип турнира">
+          </div>
+          <div class="results-tournament-name">Наименование турнира</div>
+          <div class="results-tournament-round">Тур</div>
+        </section>
+        <section class="results-match">
+          <h3 class="visually-hidden">Матч</h3>
+          <div class="results-match-game">
+            <div class="results-match-team">Команда 1</div>
+            <div class="results-match-score">
+              <div class="results-match-goals">0</div>
+              <div>-</div>
+              <div class="results-match-goals">0</div>
+            </div>
+            <div class="results-match-team">Команда 2</div> 
+          </div>
+      </section>
+    </main>
     <footer class="footer"></footer>
     <script src="scripts.js"></script>
   </body>
