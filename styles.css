@@ -1,0 +1,129 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+main {
+    flex: 1 1 auto;
+}
+
+header {
+    background-color: #2a2f37;
+    color: #ffffff;
+    padding-top: 14px;
+    padding-bottom: 16px;
+    
+}
+
+footer {
+    background-color: #2a2f37;
+    color: #ffffff;
+    padding-top: 14px;
+    padding-bottom: 16px;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 1080px; 
+}
+
+.address__link {
+    font-style: normal;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.navigation__button {
+    background-color: #2a2f37;
+    border-radius: 5px;
+    color:  #ffffff;
+    padding: 15px;
+    text-align: center;
+}
+
+.navigation__button:hover {
+    background-color: #ffffff;
+    border: 2px solid #2a2f37;
+    color: #2a2f37;
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+.header__list {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation__list {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    margin-bottom: 35px;
+}
+
+.results__list {
+    margin-bottom: 35px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.footer__contacts {
+    display: flex;
+    justify-content: space-between;
+}
+
+.competition__list {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 500px;
+    margin-bottom: 10px;
+}
+
+.game__list {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 700px;
+    margin-bottom: 5px; 
+}
+
+.datestatus__list {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 140px; 
+}
+
+.team__list {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
