@@ -6,62 +6,251 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Результаты футбольных матчей</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   </head>
   <body>
     <header class="header">
-      <nav class="navigation">
-        <ul class="navigation-list">
-          <li class="navigation-ithem">
-            <a class="navigation-link" href="#">
-              <img src="#" width="100" height="100" alt="Логотип «whoscored»">
-            </a>
+      <nav class="navigation wrapper">
+        <ul class="header__list list">
+          <li class="header__item">
+            <img src="#" width="100" height="100" alt="Логотип «whoscored»">
           </li>
-          <li class="navigation-ithem">
-            <a class="navigation-link" href="#">whoscored</a>
-          </li>
+          <li class="header__item">whoscored</li>
         </ul>
       </nav>
     </header>
     <main class="main">
-      <h1 class="visually-hidden">Результаты футбольных матчей и футбольная статистика</h1>
-      <section class="main-navigation">
-        <h2 class="main-navigation-title">Главные события</h2>
-        <ul class="main-navigation-list">
-          <li class="main-navigation-ithem">
-            <a class="main-navigation-link" href="#">Все</a>
-          </li>
-          <li class="main-navigation-ithem">
-            <a class="main-navigation-link" href="#">Вчера</a>
-          </li>
-          <li class="main-navigation-ithem">
-            <a class="main-navigation-link" href="#">Завтра</a>
-          </li>
-        </ul>
-      </section>
-      <section class="results">
-        <h2 class="visually-hidden">Результаты футбольных матчей</h2>
-        <section class="results-tournament">
-          <h3 class="visually-hidden">Турнир</h3>
-          <div class="results-tournament-logo">
-            <img src="#" width="100" height="100" alt="Логотип турнира">
-          </div>
-          <div class="results-tournament-name">Наименование турнира</div>
-          <div class="results-tournament-round">Тур</div>
-        </section>
-        <section class="results-match">
-          <h3 class="visually-hidden">Матч</h3>
-          <div class="results-match-game">
-            <div class="results-match-team">Команда 1</div>
-            <div class="results-match-score">
-              <div class="results-match-goals">0</div>
-              <div>-</div>
-              <div class="results-match-goals">0</div>
-            </div>
-            <div class="results-match-team">Команда 2</div> 
-          </div>
-      </section>
+      <div class="wrapper">
+        <h1 class="main__title">Результаты футбольных матчей и футбольная статистика</h1>
+        <article class="results">
+          <h2 class="results__title">Результаты футбольных матчей</h2>
+          <p class="results__date">Сегодня, 5 марта, воскресенье</p>
+          <ul class="navigation__list list">
+            <li class="navigation__item">
+              <button class="navigation__button">Сегодня</button>
+            </li>
+            <li class="navigation__item">
+              <button class="navigation__button">Вчера</button>
+            </li>
+            <li class="navigation__item">
+              <button class="navigation__button">Завтра</button>
+            </li>
+          </ul>
+          <ul class="results__list list">
+            <li class="results__item">
+              <ul class="tournament__list list">
+                <li class="tournament__item">
+                  <ul class="competition__list list">
+                    <li class="competition__item competition__item--emblem">
+                      <img src="#" width="100" height="100" alt="Логотип">
+                    </li>
+                    <li class="competition__item competition__item--name">Чемпионат Англии</li>
+                    <li class="competition__item competition__item--round">Тур 26</li>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="match__list list">
+                <li class="match__item">
+                  <ul class="game__list list">
+                    <li class="game__item  game__item--datestatus">
+                      <ul class="datestatus__list list">
+                        <li class="datestatus__item datestatus__item--date">15:30</li>
+                        <li class="datestatus__item datestatus__item--status">не начался</li>
+                      </ul>
+                    </li>
+                    <li class="game__item  game__item--team">
+                      <ul class="team__list list">
+                        <li class="team__item team__logo">
+                          <img src="#" width="100" height="100" alt="Логотип">
+                        </li>
+                        <li class="team__item team__name">Манчестер Сити</li>
+                      </ul>
+                    </li>
+                    <li class="game__item game__item--score">2 - 2</li>                  
+                    <li class="game__item  game__item--awayteam">
+                      <ul class="team__list list">
+                        <li class="team__item team__logo">
+                          <img src="#" width="100" height="100" alt="Логотип">
+                        </li>
+                        <li class="team__item team__name">Ньюкасл Юнайтед</li>
+                      </ul>
+                    </li>         
+                  </ul>
+                </li>
+                <li class="match__item">
+                  <ul class="game__list list">
+                    <li class="game__item  game__item--datestatus">
+                      <ul class="datestatus__list list">
+                        <li class="datestatus__item datestatus__item--date">18:00</li>
+                        <li class="datestatus__item datestatus__item--status">не начался</li>
+                      </ul>
+                    </li>
+                    <li class="game__item  game__item--team">
+                      <ul class="team__list list">
+                        <li class="team__item team__logo">
+                          <img src="#" width="100" height="100" alt="Логотип">
+                        </li>
+                        <li class="team__item team__name">Арсенал</li>
+                      </ul>
+                    </li>
+                    <li class="game__item game__item--score">3 - 2</li>                  
+                    <li class="game__item  game__item--awayteam">
+                      <ul class="team__list list">
+                        <li class="team__item team__logo">
+                          <img src="#" width="100" height="100" alt="Логотип">
+                        </li>
+                        <li class="team__item team__name">Борнмут</li>
+                      </ul>
+                    </li>         
+                  </ul>
+                </li>
+                <li class="match__item">
+                  <ul class="game__list list">
+                    <li class="game__item  game__item--datestatus">
+                      <ul class="datestatus__list list">
+                        <li class="datestatus__item datestatus__item--date">19:30</li>
+                        <li class="datestatus__item datestatus__item--status">не начался</li>
+                      </ul>
+                    </li>
+                    <li class="game__item  game__item--team">
+                      <ul class="team__list list">
+                        <li class="team__item team__logo">
+                          <img src="#" width="100" height="100" alt="Логотип">
+                        </li>
+                        <li class="team__item team__name">Ливерпуль</li>
+                      </ul>
+                    </li>
+                    <li class="game__item game__item--score">7 - 0</li>                  
+                    <li class="game__item  game__item--awayteam">
+                      <ul class="team__list list">
+                        <li class="team__item team__logo">
+                          <img src="#" width="100" height="100" alt="Логотип">
+                        </li>
+                        <li class="team__item team__name">Манчестер Юнайтед</li>
+                      </ul>
+                    </li>         
+                  </ul>
+                </li>
+              </ul>
+              
+            </li>
+          </ul>
+          <ul class="results__list list">
+            <li class="results__item">
+              <ul class="tournament__list list">
+                <li class="tournament__item">
+                  <ul class="competition__list list">
+                    <li class="competition__item competition__item--emblem">
+                      <img src="#" width="100" height="100" alt="Логотип">
+                    </li>
+                    <li class="competition__item competition__item--name">Чемпионат Италии</li>
+                    <li class="competition__item competition__item--round">Тур 26</li>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="match__list list">
+                <li class="match__item">
+                  <ul class="game__list list">
+                    <li class="game__item  game__item--datestatus">
+                      <ul class="datestatus__list list">
+                        <li class="datestatus__item datestatus__item--date">14:30</li>
+                        <li class="datestatus__item datestatus__item--status">не начался</li>
+                      </ul>
+                    </li>
+                    <li class="game__item  game__item--team">
+                      <ul class="team__list list">
+                        <li class="team__item team__logo">
+                          <img src="#" width="100" height="100" alt="Логотип">
+                        </li>
+                        <li class="team__item team__name">Лечче</li>
+                      </ul>
+                    </li>
+                    <li class="game__item game__item--score">0 - 2</li>                  
+                    <li class="game__item  game__item--awayteam">
+                      <ul class="team__list list">
+                        <li class="team__item team__logo">
+                          <img src="#" width="100" height="100" alt="Логотип">
+                        </li>
+                        <li class="team__item team__name">Торино</li>
+                      </ul>
+                    </li>         
+                  </ul>
+                </li>
+                <li class="match__item">
+                  <ul class="game__list list">
+                    <li class="game__item  game__item--datestatus">
+                      <ul class="datestatus__list list">
+                        <li class="datestatus__item datestatus__item--date">20:00</li>
+                        <li class="datestatus__item datestatus__item--status">не начался</li>
+                      </ul>
+                    </li>
+                    <li class="game__item  game__item--team">
+                      <ul class="team__list list">
+                        <li class="team__item team__logo">
+                          <img src="#" width="100" height="100" alt="Логотип">
+                        </li>
+                        <li class="team__item team__name">Рома</li>
+                      </ul>
+                    </li>
+                    <li class="game__item game__item--score">3 - 4</li>                  
+                    <li class="game__item  game__item--awayteam">
+                      <ul class="team__list list">
+                        <li class="team__item team__logo">
+                          <img src="#" width="100" height="100" alt="Логотип">
+                        </li>
+                        <li class="team__item team__name">Сассуоло</li>
+                      </ul>
+                    </li>         
+                  </ul>
+                </li>
+                <li class="match__item">
+                  <ul class="game__list list">
+                    <li class="game__item  game__item--datestatus">
+                      <ul class="datestatus__list list">
+                        <li class="datestatus__item datestatus__item--date">22:45</li>
+                        <li class="datestatus__item datestatus__item--status">не начался</li>
+                      </ul>
+                    </li>
+                    <li class="game__item  game__item--team">
+                      <ul class="team__list list">
+                        <li class="team__item team__logo">
+                          <img src="#" width="100" height="100" alt="Логотип">
+                        </li>
+                        <li class="team__item team__name">Ювентус</li>
+                      </ul>
+                    </li>
+                    <li class="game__item game__item--score">4 - 2</li>                  
+                    <li class="game__item  game__item--awayteam">
+                      <ul class="team__list list">
+                        <li class="team__item team__logo">
+                          <img src="#" width="100" height="100" alt="Логотип">
+                        </li>
+                        <li class="team__item team__name">Сампдория</li>
+                      </ul>
+                    </li>         
+                  </ul>
+                </li>
+              </ul>
+              
+            </li>
+          </ul>
+        </article>
+      </div>
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="wrapper">
+        <section class="footer__contacts">
+          <h2 class="visually-hidden">Контакты</h2>
+          <address class="contacts__address">
+            <p class="address__text">Барнаул, Пионеров, 1</p>
+            <a class="address__link" href="tel:+79619862181">+7 961 986-21-81</a>
+          </address>
+          <p class="about-text"><a class="address__link" href="https://t.me/aleksy_szary">© aleksy_szary</a></p>
+        </section>
+      </div>
+    </footer>
     <script src="scripts.js"></script>
   </body>
 </html>
