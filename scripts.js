@@ -1,21 +1,74 @@
-const URL = "https://api.football-data.org/v4/matches";
+const URL =
+  "https://api.football-data.org/v4/matches/?dateFrom=2023-03-19&dateTo=2023-03-20";
 
-const response = fetch(URL, {
-  headers: {
-    "X-Auth-Token": "5366492db9d34e64bd0bd57c503d82ed",
-  },
-})
-  // const response = fetch(URL, {
-  //   method: "GET",
-  //   headers: {
-  //     "X-Auth-Token": "5366492db9d34e64bd0bd57c503d82ed",
-  //     "X-Unfold-Goals": "true",
-  //     "Accept-Encoding": "gzip, deflate, br",
-  //     Connection: "keep-alive",
-  //     "Content-Type": "application/json",
-  //   },
-  // })
-  .then((response) => response.json())
-  .then((data) => data);
+// вот эта функция всё отрисовывает
+async function render() {
+  let res = await fetch(URL, {
+    headers: {
+      "X-Auth-Token": "5366492db9d34e64bd0bd57c503d82ed",
+    },
+  });
 
-console.log(response);
+  let json = await res.json();
+
+  // Получает список турниров
+  function getCompetitions(json) {
+    return json.resultSet.competitions.split(",");
+  }
+
+  function createMatches(matches) {
+    let res = "";
+
+    matches.forEach((match) => {
+      res += `<li>
+    <article>
+      <span>${match.utcDate}</span>
+      <img src="${match.homeTeam.crest}" alt="Логотип ${match.homeTeam.name}" />
+      <span>${match.homeTeam.name}</span>
+      <span>${match.score.fullTime.home}:${match.score.fullTime.away}</span>
+      <img src="${match.awayTeam.crest}" alt="Логотип ${match.awayTeam.name}" />
+      <span>${match.awayTeam.name}</span>
+    </article>
+  </li>`;
+    });
+
+    return res;
+  }
+
+  // ul для соревнований
+  const competitionList = document.createElement("ul");
+  competitionList.className = "competitionList";
+
+  const competitions = getCompetitions(json);
+
+  competitions.forEach((competition) => {
+    // получили список матчей для турнира
+    const matches = json.matches.filter(
+      (match) => match.competition.code === competition
+    );
+
+    const li = document.createElement("li");
+    li.className = "competitionList__item";
+    li.innerHTML = ` 
+    <section class="competitionList__itemSection">
+      <div class="competitionList__headWrapper">
+        <img class="competitionLogo" src="${
+          matches[0].competition.emblem
+        }" alt="Логотип ${matches[0].competition.name}" />
+        <h2 class="comtetitionTitle">${matches[0].competition.name}</h2>
+        <span class="comtetitionStage">${matches[0].matchday} тур</span>
+      </div>
+      <ul class="competitionList__matches">
+        ${createMatches(matches)}
+      </ul>
+    </section>
+  `;
+
+    competitionList.append(li);
+  });
+
+  const wrapper = document.querySelector(".wrapper");
+  wrapper.append(competitionList);
+}
+
+render();
