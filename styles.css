@@ -129,20 +129,14 @@ footer {
 
 .competitionList__headWrapper {
     display: flex;
-}
-
-.competitionList__item {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.competitionList__matches {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    align-items: center;
 }
 
 .comtetitionTitle {
     font-size: inherit;
+}
+
+.competitionList__matchWrapper {
+    display: flex;
+    align-items: center;
 }

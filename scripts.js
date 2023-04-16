@@ -21,7 +21,7 @@ async function render() {
 
     matches.forEach((match) => {
       res += `<li>
-    <article>
+    <article class="competitionList__matchWrapper">
       <span>${match.utcDate}</span>
       <img src="${match.homeTeam.crest}" width="30" height="30" alt="Логотип ${match.homeTeam.name}" />
       <span>${match.homeTeam.name}</span>
@@ -37,7 +37,7 @@ async function render() {
 
   // ul для соревнований
   const competitionList = document.createElement("ul");
-  competitionList.className = "competitionList";
+  competitionList.className = "competitionList list";
 
   const competitions = getCompetitions(json);
 
@@ -58,7 +58,7 @@ async function render() {
         <h2 class="comtetitionTitle">${matches[0].competition.name}</h2>
         <span class="comtetitionStage">${matches[0].matchday} тур</span>
       </div>
-      <ul class="competitionList__matches">
+      <ul class="competitionList__matches list">
         ${createMatches(matches)}
       </ul>
     </section>
