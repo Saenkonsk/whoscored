@@ -127,3 +127,16 @@ footer {
     gap: 10px;
 }
 
+.competitionList__headWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.comtetitionTitle {
+    font-size: inherit;
+}
+
+.competitionList__matchWrapper {
+    display: flex;
+    align-items: center;
+}
