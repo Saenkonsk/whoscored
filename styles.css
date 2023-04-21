@@ -43,17 +43,43 @@ footer {
 }
 
 .navigation__button {
-    background-color: #2a2f37;
-    border-radius: 5px;
-    color:  #ffffff;
-    padding: 15px;
+    background-color: #f3f5f7;
+    height: 45px;
+    color:  #2a2f37;
+    padding: 0 15px;
     text-align: center;
+    font-size: 16px;
+    letter-spacing: .34px;
+    border-radius: 8px;
+    border: none;
 }
 
 .navigation__button:hover {
-    background-color: #ffffff;
-    border: 2px solid #2a2f37;
+    background-color: #dee3e8;
+    border: none;
     color: #2a2f37;
+}
+
+.navigation__button--calendar {
+    background: url(/image/calendar.svg) no-repeat center;
+    width: 26px;
+    height: 24px;
+    margin: 0 20px;
+    background-size: contain;
+}
+
+.navigation__button--icon {
+    padding: 0;
+}
+
+.navigation__button--pink {
+    color: #ff6160;
+    background-color: #ffeeef;
+}
+
+.navigation__button--pink:hover {
+    color: #ff6160;
+    background-color: #ffb6b6
 }
 
 .list {
@@ -62,18 +88,31 @@ footer {
     list-style: none;
 }
 
+.results__date {
+    margin-bottom: 20px;
+    font-size: 25px;
+}
 
 .header__list {
     margin: 0 auto;
     display: flex;
+    align-items: center;
     justify-content: space-between;
+}
+
+.header__item--name {
+    font-size: 24px;
+    color: #ed6e16;
 }
 
 .navigation__list {
     display: flex;
-    justify-content: space-between;
-    width: 250px;
     margin-bottom: 35px;
+}
+
+.navigation__item {
+    margin-right: 10px;
+    min-width: 70px;
 }
 
 .results__list {
@@ -146,16 +185,33 @@ footer {
 
 .competitionList__matchWrapper {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #dcdcde;
     padding: 11px 5px;
+}
+
+.competitionList__matchDate {
+    width: 200px;
 }
 
 .competitionList__matchInfo {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.competitionList__team {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    gap: 5px;
+    width: 160px;
+    
+}
+
+.home {
+    flex-direction: row-reverse;
+
 }
 
 .competitionList__matchScore {

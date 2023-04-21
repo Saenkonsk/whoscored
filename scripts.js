@@ -32,11 +32,11 @@ async function render() {
     matches.forEach((match) => {
       res += `<li>
     <article class="competitionList__matchWrapper">
-      <span>${formatDate(match.utcDate)}</span>
-      <div class="competitionList__matchInfo"><div><img src="${match.homeTeam.crest}" width="30" height="30" alt="Логотип ${match.homeTeam.name}" />
+      <span class="competitionList__matchDate">${formatDate(match.utcDate)}</span>
+      <div class="competitionList__matchInfo"><div class="competitionList__team home"><img src="${match.homeTeam.crest}" width="30" height="30" alt="Логотип ${match.homeTeam.name}" />
       <span>${match.homeTeam.name}</span></div>
       <span class="competitionList__matchScore">${match.score.fullTime.home} : ${match.score.fullTime.away}</span>
-      <div><img src="${match.awayTeam.crest}" width="30" height="30"  alt="Логотип ${match.awayTeam.name}" />
+      <div class="competitionList__team"><img src="${match.awayTeam.crest}" width="30" height="30"  alt="Логотип ${match.awayTeam.name}" />
       <span>${match.awayTeam.name}</span></div></div>
     </article>
   </li>`;
