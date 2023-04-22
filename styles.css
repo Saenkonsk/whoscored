@@ -33,7 +33,7 @@ footer {
 
 .wrapper {
     margin: 0 auto;
-    width: 1080px; 
+    width: 880px; 
 }
 
 .address__link {
@@ -43,17 +43,43 @@ footer {
 }
 
 .navigation__button {
-    background-color: #2a2f37;
-    border-radius: 5px;
-    color:  #ffffff;
-    padding: 15px;
+    background-color: #f3f5f7;
+    height: 45px;
+    color:  #2a2f37;
+    padding: 0 15px;
     text-align: center;
+    font-size: 16px;
+    letter-spacing: .34px;
+    border-radius: 8px;
+    border: none;
 }
 
 .navigation__button:hover {
-    background-color: #ffffff;
-    border: 2px solid #2a2f37;
+    background-color: #dee3e8;
+    border: none;
     color: #2a2f37;
+}
+
+.navigation__button--calendar {
+    background: url(/image/calendar.svg) no-repeat center;
+    width: 26px;
+    height: 24px;
+    margin: 0 20px;
+    background-size: contain;
+}
+
+.navigation__button--icon {
+    padding: 0;
+}
+
+.navigation__button--pink {
+    color: #ff6160;
+    background-color: #ffeeef;
+}
+
+.navigation__button--pink:hover {
+    color: #ff6160;
+    background-color: #ffb6b6
 }
 
 .list {
@@ -62,18 +88,31 @@ footer {
     list-style: none;
 }
 
+.results__date {
+    margin-bottom: 20px;
+    font-size: 25px;
+}
 
 .header__list {
     margin: 0 auto;
     display: flex;
+    align-items: center;
     justify-content: space-between;
+}
+
+.header__item--name {
+    font-size: 24px;
+    color: #ed6e16;
 }
 
 .navigation__list {
     display: flex;
-    justify-content: space-between;
-    width: 250px;
     margin-bottom: 35px;
+}
+
+.navigation__item {
+    margin-right: 10px;
+    min-width: 70px;
 }
 
 .results__list {
@@ -96,6 +135,10 @@ footer {
 .footer__contacts {
     display: flex;
     justify-content: space-between;
+}
+
+.competitionList__itemSection {
+    margin-bottom: 13px;
 }
 
 .competition__list {
@@ -129,7 +172,11 @@ footer {
 
 .competitionList__headWrapper {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    height: 50px;
+    border-bottom: 2px solid #dcdcde;
+    padding-bottom: 4px;
 }
 
 .comtetitionTitle {
@@ -139,4 +186,66 @@ footer {
 .competitionList__matchWrapper {
     display: flex;
     align-items: center;
+    border-bottom: 1px solid #dcdcde;
+    padding: 11px 5px;
+}
+
+.competitionList__matchDate {
+    width: 200px;
+}
+
+.competitionList__matchInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.competitionList__team {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    gap: 5px;
+    width: 160px;
+    
+}
+
+.home {
+    flex-direction: row-reverse;
+
+}
+
+.competitionList__matchScore {
+    background-color: #f3f5f7;
+    border-radius: 5px;
+    padding: 5px 5px;
+    width: 85px;
+    margin: 0 6px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+}
+
+
+.competitionList__matchesItemWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.competitionList__matchCounterWrapper {
+    background-color: #0072b8;
+    border-radius: 5px;
+    padding: 1px 1px;
+    color: #ffffff;
+    font-weight: bold;
+    height: 23px;
+    min-width: 29px;
+    text-align: center;
+}
+
+.competitionList__matches {
+    padding-top: 10px;
 }
