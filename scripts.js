@@ -1,13 +1,32 @@
-const URL =
-  "https://api.football-data.org/v4/matches/?dateFrom=2023-03-19&dateTo=2023-03-20";
+const URL = "https://api.football-data.org/v4/matches/?";
+
+const currentDate = new Date();
+const nextDate = new Date(currentDate);
+nextDate.setDate(nextDate.getDate() + 1);
+
+function getFormattedDate(date) {
+  const year = date.getFullYear();
+  const month =
+    date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
+  const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
+
+  return `${year}-${month}-${day}`;
+}
 
 // вот эта функция всё отрисовывает
 async function render() {
-  let res = await fetch(URL, {
-    headers: {
-      "X-Auth-Token": "5366492db9d34e64bd0bd57c503d82ed",
-    },
-  })
+  let res = await fetch(
+    URL +
+      new URLSearchParams({
+        dateFrom: getFormattedDate(currentDate),
+        dateTo: getFormattedDate(nextDate),
+      }),
+    {
+      headers: {
+        "X-Auth-Token": "5366492db9d34e64bd0bd57c503d82ed",
+      },
+    }
+  );
 
   let json = await res.json();
 
@@ -32,12 +51,24 @@ async function render() {
     matches.forEach((match) => {
       res += `<li>
     <article class="competitionList__matchWrapper">
-      <span class="competitionList__matchDate">${formatDate(match.utcDate)}</span>
-      <div class="competitionList__matchInfo"><div class="competitionList__team home"><img src="${match.homeTeam.crest}" width="30" height="30" alt="Логотип ${match.homeTeam.name}" />
-      <span class="competitionList__teamName">${match.homeTeam.name}</span></div>
-      <span class="competitionList__matchScore">${match.score.fullTime.home} : ${match.score.fullTime.away}</span>
-      <div class="competitionList__team"><img src="${match.awayTeam.crest}" width="30" height="30"  alt="Логотип ${match.awayTeam.name}" />
-      <span class="competitionList__teamName">${match.awayTeam.name}</span></div></div>
+      <span class="competitionList__matchDate">${formatDate(
+        match.utcDate
+      )}</span>
+      <div class="competitionList__matchInfo"><div class="competitionList__team home"><img src="${
+        match.homeTeam.crest
+      }" width="30" height="30" alt="Логотип ${match.homeTeam.name}" />
+      <span class="competitionList__teamName">${
+        match.homeTeam.name
+      }</span></div>
+      <span class="competitionList__matchScore">${
+        match.score.fullTime.home
+      } : ${match.score.fullTime.away}</span>
+      <div class="competitionList__team"><img src="${
+        match.awayTeam.crest
+      }" width="30" height="30"  alt="Логотип ${match.awayTeam.name}" />
+      <span class="competitionList__teamName">${
+        match.awayTeam.name
+      }</span></div></div>
     </article>
   </li>`;
     });
@@ -64,7 +95,9 @@ async function render() {
       <div class="competitionList__headWrapper">
         <div class="competitionList__matchesItemWrapper"><img class="competitionLogo" src="${
           matches[0].competition.emblem
-        }" width="24" height="24" alt="Логотип ${matches[0].competition.name}" />
+        }" width="24" height="24" alt="Логотип ${
+      matches[0].competition.name
+    }" />
         <h2 class="comtetitionTitle">${matches[0].competition.name}</h2>
         <span class="comtetitionStage">${matches[0].matchday} тур</span></div>
         <div class="competitionList__matchCounterWrapper">1</div>
@@ -82,4 +115,10 @@ async function render() {
   wrapper.append(competitionList);
 }
 
-render();
+const dateElement = document.querySelector(".results__date");
+dateElement.innerHTML = `Сегодня ${new Date().toDateString()}`;
+
+const todayButton = document.querySelector(".navigation__button--today");
+todayButton.onclick = render;
+
+// render();
