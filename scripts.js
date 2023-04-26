@@ -34,10 +34,10 @@ async function render() {
     <article class="competitionList__matchWrapper">
       <span class="competitionList__matchDate">${formatDate(match.utcDate)}</span>
       <div class="competitionList__matchInfo"><div class="competitionList__team home"><img src="${match.homeTeam.crest}" width="30" height="30" alt="Логотип ${match.homeTeam.name}" />
-      <span>${match.homeTeam.name}</span></div>
+      <span class="competitionList__teamName">${match.homeTeam.name}</span></div>
       <span class="competitionList__matchScore">${match.score.fullTime.home} : ${match.score.fullTime.away}</span>
       <div class="competitionList__team"><img src="${match.awayTeam.crest}" width="30" height="30"  alt="Логотип ${match.awayTeam.name}" />
-      <span>${match.awayTeam.name}</span></div></div>
+      <span class="competitionList__teamName">${match.awayTeam.name}</span></div></div>
     </article>
   </li>`;
     });
@@ -60,7 +60,7 @@ async function render() {
     const li = document.createElement("li");
     li.className = "competitionList__item";
     li.innerHTML = ` 
-    <section class="competitionList__itemSection">
+    <section>
       <div class="competitionList__headWrapper">
         <div class="competitionList__matchesItemWrapper"><img class="competitionLogo" src="${
           matches[0].competition.emblem
@@ -69,7 +69,7 @@ async function render() {
         <span class="comtetitionStage">${matches[0].matchday} тур</span></div>
         <div class="competitionList__matchCounterWrapper">1</div>
       </div>
-      <ul class="competitionList__matches list">
+      <ul class="list">
         ${createMatches(matches)}
       </ul>
     </section>

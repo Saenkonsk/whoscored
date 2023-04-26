@@ -16,107 +16,15 @@ main {
     flex: 1 1 auto;
 }
 
-header {
-    background-color: #2a2f37;
-    color: #ffffff;
-    padding-top: 14px;
-    padding-bottom: 16px;
-    
-}
-
-footer {
-    background-color: #2a2f37;
-    color: #ffffff;
-    padding-top: 14px;
-    padding-bottom: 16px;
-}
-
 .wrapper {
     margin: 0 auto;
     width: 880px; 
-}
-
-.address__link {
-    font-style: normal;
-    text-decoration: none;
-    color: #ffffff;
-}
-
-.navigation__button {
-    background-color: #f3f5f7;
-    height: 45px;
-    color:  #2a2f37;
-    padding: 0 15px;
-    text-align: center;
-    font-size: 16px;
-    letter-spacing: .34px;
-    border-radius: 8px;
-    border: none;
-}
-
-.navigation__button:hover {
-    background-color: #dee3e8;
-    border: none;
-    color: #2a2f37;
-}
-
-.navigation__button--calendar {
-    background: url(/image/calendar.svg) no-repeat center;
-    width: 26px;
-    height: 24px;
-    margin: 0 20px;
-    background-size: contain;
-}
-
-.navigation__button--icon {
-    padding: 0;
-}
-
-.navigation__button--pink {
-    color: #ff6160;
-    background-color: #ffeeef;
-}
-
-.navigation__button--pink:hover {
-    color: #ff6160;
-    background-color: #ffb6b6
 }
 
 .list {
     margin: 0;
     padding: 0;
     list-style: none;
-}
-
-.results__date {
-    margin-bottom: 20px;
-    font-size: 25px;
-}
-
-.header__list {
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.header__item--name {
-    font-size: 24px;
-    color: #ed6e16;
-}
-
-.navigation__list {
-    display: flex;
-    margin-bottom: 35px;
-}
-
-.navigation__item {
-    margin-right: 10px;
-    min-width: 70px;
-}
-
-.results__list {
-    margin-bottom: 35px;
 }
 
 .visually-hidden {
@@ -132,13 +40,71 @@ footer {
     overflow: hidden;
 }
 
-.footer__contacts {
+.navigation__button {
+    background-color: #f3f5f7;
+    height: 45px;
+    color:  #2a2f37;
+    padding: 0 15px;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: .34px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color .3s, color .3s;
+}
+
+.navigation__button:hover {
+    background-color: #dee3e8;
+    color: #2a2f37;
+}
+
+.navigation__button--pink {
+    color: #ff6160;
+    background-color: #ffeeef;
+}
+
+.navigation__button--pink:hover {
+    color: #ff6160;
+    background-color: #ffb6b6
+}
+
+/* header */
+
+header {
+    background-color: #2a2f37;
+    color: #ffffff;
+    padding-top: 14px;
+    padding-bottom: 16px;
+}
+
+.header__list {
+    margin: 0 auto;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
-.competitionList__itemSection {
-    margin-bottom: 13px;
+.header__item--name {
+    font-size: 24px;
+    color: #ed6e16;
+}
+
+/* main */
+
+.results__date {
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+
+.navigation__list {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.navigation__item {
+    min-width: 70px;
 }
 
 .competition__list {
@@ -170,13 +136,19 @@ footer {
     gap: 10px;
 }
 
+.competitionList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
 .competitionList__headWrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 50px;
     border-bottom: 2px solid #dcdcde;
-    padding-bottom: 4px;
+    margin-bottom: 10px;
 }
 
 .comtetitionTitle {
@@ -187,7 +159,7 @@ footer {
     display: flex;
     align-items: center;
     border-bottom: 1px solid #dcdcde;
-    padding: 11px 5px;
+    padding: 10px 5px;
 }
 
 .competitionList__matchDate {
@@ -203,10 +175,15 @@ footer {
 .competitionList__team {
     display: flex;
     align-items: center;
-    white-space: nowrap;
     gap: 5px;
-    width: 160px;
+    width: 200px;
     
+}
+
+.competitionList__teamName {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .home {
@@ -246,6 +223,22 @@ footer {
     text-align: center;
 }
 
-.competitionList__matches {
-    padding-top: 10px;
+/* footer */
+
+footer {
+    background-color: #2a2f37;
+    color: #ffffff;
+    padding-top: 14px;
+    padding-bottom: 16px;
+}
+
+.footer__contacts {
+    display: flex;
+    justify-content: space-between;
+}
+
+.address__link {
+    font-style: normal;
+    text-decoration: none;
+    color: #ffffff;
 }
